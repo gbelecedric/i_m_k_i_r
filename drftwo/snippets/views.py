@@ -38,7 +38,7 @@ def snippet_detail(request, pk):
             'e': e,
             'status' :404
         }
-        return JsonResponse(data)
+        return JsonResponse(data,safe)
 
     if request.method == 'GET':
         serializer = SnippetSerializer(snippet)
