@@ -35,10 +35,10 @@ def snippet_detail(request, pk):
     
         print(e)
         data = {
-            'e':
+            'e': "snippet DoesNotExist"
         }
         e = "snippet DoesNotExist"
-        return JsonResponse(e,status=404,safe=False)
+        return JsonResponse(data,status=404,safe=False)
 
     if request.method == 'GET':
         serializer = SnippetSerializer(snippet)
