@@ -34,11 +34,8 @@ def snippet_detail(request, pk):
     except Exception as e :
     
         print(e)
-        data = {
-            'e': e,
-            'status' :404
-        }
-        return JsonResponse(data,safe)
+        e = "snippet DoesNotExist"
+        return JsonResponse(data=e,status=404,safe=False)
 
     if request.method == 'GET':
         serializer = SnippetSerializer(snippet)
