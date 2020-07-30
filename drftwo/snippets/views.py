@@ -35,9 +35,9 @@ def snippet_detail(request, pk):
     
         print(e)
         data = {
-            'e': "snippet DoesNotExist"
+            'message': e
         }
-        e = "snippet DoesNotExist"
+ 
         return JsonResponse(data,status=404,safe=False)
 
     if request.method == 'GET':
