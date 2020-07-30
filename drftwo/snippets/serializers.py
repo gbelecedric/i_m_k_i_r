@@ -28,6 +28,7 @@ from snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
 #         instance.save()
 #         return instance
 
+
 class SnippetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Snippet

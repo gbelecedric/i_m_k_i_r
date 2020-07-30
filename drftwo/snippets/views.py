@@ -31,8 +31,13 @@ def snippet_detail(request, pk):
     """
     try:
         snippet = Snippet.objects.get(pk=pk)
-    except Snippet.DoesNotExist:
-        return HttpResponse(status=404)
+    except Exception as e :
+    
+        print(e)
+        data = {
+            'e': e
+        }
+        return JsonResponse(data,status=404)
 
     if request.method == 'GET':
         serializer = SnippetSerializer(snippet)
