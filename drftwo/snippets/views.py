@@ -35,7 +35,8 @@ def snippet_detail(request, pk):
     
         print(e)
         data = {
-            'message': str(e)
+            'message': str(e),
+            'status':404
         }
 
         return JsonResponse(data,status=404,safe=False)
