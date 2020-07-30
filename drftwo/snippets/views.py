@@ -17,6 +17,7 @@ def snippet_list(request):
 
     elif request.method == 'POST':
         print(request.data)
+
         serializer = SnippetSerializer(data=request.data)
 
         if serializer.is_valid():
