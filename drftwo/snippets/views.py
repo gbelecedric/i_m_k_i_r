@@ -18,6 +18,7 @@ def snippet_list(request):
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
+        print(data)
         serializer = SnippetSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
