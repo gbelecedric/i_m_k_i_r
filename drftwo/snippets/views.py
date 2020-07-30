@@ -3,18 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer
-from snippets.serializers import UserSerializer
-from django.contrib.auth.models import User
-from rest_framework import generics
 
-class UserList(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-
-class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
 @api_view(['GET', 'POST'])
 def snippet_list(request , format=None):
