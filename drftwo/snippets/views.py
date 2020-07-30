@@ -35,9 +35,9 @@ def snippet_detail(request, pk):
     
         print(e)
         data = {
-            'message': e
+            'message': str(e)
         }
- 
+
         return JsonResponse(data,status=404,safe=False)
 
     if request.method == 'GET':
