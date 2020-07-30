@@ -35,9 +35,10 @@ def snippet_detail(request, pk):
     
         print(e)
         data = {
-            'e': e
+            'e': e,
+            'status' ,404
         }
-        return JsonResponse(data,status=404)
+        return JsonResponse(data)
 
     if request.method == 'GET':
         serializer = SnippetSerializer(snippet)
